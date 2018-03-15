@@ -66,6 +66,7 @@ import createCrudModel, { config } from 'axios-crud';
 const Model = createCrudModel('users');
 
 // Get all users
-Model.getAll().then((result) => console.log(result))
-// Get a single user
+Model.getAll().then((result) => console.log(result));
+// Get a user data with id 10
+Model.get(10).then((result) => console.log(result));
 ```
