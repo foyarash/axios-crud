@@ -1,0 +1,12 @@
+{
+  "name": "axios-crud",
+  "version": "1.0.0",
+  "description": "Simple set of functions made for CRUD requests on REST API",
+  "main": "index.js",
+  "author": "Foyarash",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "keywords": ["axios", "crud"]
+}
