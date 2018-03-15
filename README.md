@@ -44,7 +44,8 @@ This can be done using the `config` method, which takes an object as parameter a
 You can set the following properties in the config object:
 
 * adapter : defaults to `axios`. It is usefull if you want to use an abstraction of your networking library. This adapter must contain the same methods than axios has.
-* singularize : taking back our UserAPI example, our model is called "users". You may want to remove the last "s" in case of creation and edition (that's how it works with RoR). Setting this to true will then remove the last character from the model name when passing it as a key of the params object for the create / edit requests. Defaults to true.
+* modelNameAsAttribute : add an attribute which name is the model name as a param for create and edit requests.
+* singularize : used if `modelNameAsAttribute` is true. Taking back our UserAPI example, our model is called "users". You may want to remove the last "s" in case of creation and edition (that's how it works with RoR). Setting this to true will then remove the last character from the model name when passing it as a key of the params object for the create / edit requests. Defaults to true.
 
 # API
 
