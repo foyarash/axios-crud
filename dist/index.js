@@ -19,13 +19,12 @@ var _isFunction2 = _interopRequireDefault(_isFunction);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var globalConfig = {
   adapter: _axios2.default,
-  singularize: true
+  singularize: true,
+  modelNameAsAttribute: true
 };
 
 var config = function config(newConf) {
@@ -59,7 +58,13 @@ var CrudModel = function () {
   }, {
     key: 'getRequestParams',
     value: function getRequestParams(modelData, additionalData) {
-      return _extends(_defineProperty({}, this.getKeyForRequestParams(), modelData), additionalData && additionalData || {});
+      var params = {};
+      if (this.config.modelNameAsAttribute) {
+        params[this.getKeyForRequestParams()] = modelData;
+      } else {
+        params = _extends({}, modelData);
+      }
+      return _extends({}, params, additionalData && additionalData || {});
     }
   }, {
     key: 'getAndVerifyAdapter',
