@@ -61,7 +61,7 @@ For edit and create, modelData will be associated with the key [modelName] key, 
 # Simple example
 
 ```
-import createCrudModel, { config } from 'axios-crud';
+import { createCrudModel, config } from 'axios-crud';
 
 const Model = createCrudModel('users');
 

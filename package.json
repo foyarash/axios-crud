@@ -2,11 +2,28 @@
   "name": "axios-crud",
   "version": "1.0.0",
   "description": "Simple set of functions made for CRUD requests on REST API",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "Foyarash",
   "license": "MIT",
+  "scripts": {
+    "init": "mkdir dist",
+    "clean": "rm -rf dist",
+    "prebuild": "npm run clean && npm run init",
+    "build":
+      "npm run prebuild && ./node_modules/.bin/babel ./lib/CrudModel.js --out-file dist/index.js",
+    "test": "mocha --require babel-core/register ./lib/*.test.js"
+  },
   "dependencies": {
     "axios": "^0.18.0"
   },
-  "keywords": ["axios", "crud"]
+  "keywords": ["axios", "crud"],
+  "devDependencies": {
+    "axios-mock-adapter": "^1.14.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.1.2",
+    "mocha": "^5.0.4"
+  }
 }
