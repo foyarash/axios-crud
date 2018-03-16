@@ -71,3 +71,7 @@ Model.getAll().then((result) => console.log(result));
 // Get a user data with id 10
 Model.get(10).then((result) => console.log(result));
 ```
+
+Run the example folder:
+
+`yarn` or `npm i` then `yarn start` or `npm start`
