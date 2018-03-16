@@ -4,6 +4,9 @@
   "description": "Simple set of functions made for CRUD requests on REST API",
   "main": "dist/index.js",
   "author": "Foyarash",
+  "repository": {
+    "url": "https://github.com/foyarash/axios-crud"
+  },
   "license": "MIT",
   "scripts": {
     "init": "mkdir dist",
